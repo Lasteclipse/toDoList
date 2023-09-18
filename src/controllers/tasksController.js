@@ -1,5 +1,12 @@
 const taskModel = require('../models/tasksModel');
 
+const Resposta =  async (_request, response) => {
+
+    //const tasks = await taskModel.getAll();  
+    return response.status(200).json({Message: 'Funcionou'});
+};
+
+
 const getAll =  async (_request, response) => {
 
     const tasks = await taskModel.getAll();  
@@ -32,5 +39,6 @@ module.exports = {
     getAll,
     createdTask,
     deleteTask,
-    updateTask
+    updateTask,
+    Resposta
 };

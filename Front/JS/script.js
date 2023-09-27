@@ -1,38 +1,40 @@
-const minhaUrl = "http://18.229.157.15:3306/tasks"
-button = document.getElementById('botao')
+/* eslint-disable no-undef */
+/* eslint-disable indent */
+const minhaUrl = 'http://54.233.88.7:3306/tasks';
+button = document.getElementById('botao');
 
 
 
 
 // Get
-function receberTask() {
-    fetch(minhaUrl).then(function(response) {
+// function receberTask() {
+//     fetch(minhaUrl).then(function(response) {
 
-        return response.json();
+//         return response.json();
       
-      }).then(function(data) {
+//       }).then(function(data) {
       
-        console.log(data);
+//         console.log(data);
       
-      }).catch(function() {
+//       }).catch(function() {
       
-        console.log("Houve algum problema!");
+//         console.log('Houve algum problema!');
       
-      });
-}
+//       });
+// }
 
 button.addEventListener('click', () => {
-    campo = document.getElementById('input')
-    campotxt = campo.value
-    enviar(campotxt)
-})
+    campo = document.getElementById('input');
+    campotxt = campo.value;
+    enviar(campotxt);
+});
 
 // Post
 function enviar(valor) {
-    fetch("http://18.229.157.15:3306/tasks", {
-        method: "POST",
+    fetch('http://54.233.88.7:3306/tasks', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'pplication/json'
         },
         body: JSON.stringify({ title: valor })
       })
